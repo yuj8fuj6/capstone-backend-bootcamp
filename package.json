@@ -1,0 +1,13 @@
+{
+  "name": "express-bootcamp-template",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0"
+  }
+}
