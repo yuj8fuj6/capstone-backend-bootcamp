@@ -8,8 +8,8 @@ const getOne = async (req, res) => {
   const { email } = req.params;
 
   try {
-    const user = await user.findOrCreate({ where: { email: email } });
-    return res.json(user);
+    const currentUser = await user.findOrCreate({ where: { email: email } });
+    return res.json(currentUser);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
   }
