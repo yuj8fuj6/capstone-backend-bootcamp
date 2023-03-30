@@ -41,7 +41,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       block_no: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       street_name: {
         type: Sequelize.STRING,
