@@ -10,10 +10,6 @@ const checkJwt = auth({
   issuerBaseURL: process.env.AUTH0_DOMAIN,
 });
 
-// // URA credentials
-// const accessKey = process.env.URA_ACCESS_KEY;
-// const token = process.env.URA_TOKEN;
-
 const PORT = 3000;
 const app = express();
 app.use(bodyParser.json());
@@ -22,28 +18,6 @@ app.use(bodyParser.json());
 app.use(cors("*"));
 
 app.use(express.json());
-
-// URA API Call does not work!
-// app.get("/planning", (req, res) => {
-//   request.get(
-//     {
-//       url: "https://www.ura.gov.sg/uraDataService/invokeUraDS?service=Planning_Decision&last_dnload_date=24/03/2022",
-//       headers: {
-//         AccessKey: `${accessKey}`,
-//         Token: `${token}`,
-//         // "Access-Control-Allow-Origin": "*",
-//       },
-//       json: true,
-//     },
-//     (error, response) => {
-//       if (error) {
-//         return res.send("Error Occurred");
-//       }
-//       console.log(response.body);
-//       res.send(response);
-//     },
-//   );
-// });
 
 //import routers
 const mapsRouter = require("./routers/mapsRouter");
