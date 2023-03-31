@@ -1,0 +1,75 @@
+const PORT = 8000;
+const express = require("express");
+const axios = require("axios");
+const cheerio = require("cheerio");
+const cors = require("cors");
+
+const app = express();
+app.use(cors("*"));
+app.use(express.json());
+
+const uraURL = "https://www.ura.gov.sg/Corporate/Guidelines/Circulars";
+const scdfURL =
+  "https://www.corenet.gov.sg/general/e-info/Circulars.aspx?startDate=22/05/2014&agency=66369&page=0";
+const bcaURL =
+  "https://www1.bca.gov.sg/about-us/news-and-publications/circulars";
+
+axios(uraURL)
+  .then((res) => {
+    const html = res.data;
+    const $ = cheerio.load(html);
+    const uraCircular = [];
+
+    $(".horizontal-box", html).each(function () {
+      const date = $(this)
+        .find(".col-md-3.col-sm-3.col-xs-12.no-lr-padding")
+        .find(".text")
+        .text()
+        .trim();
+      const title = $(this)
+        .find(".col-md-9.col-sm-9.col-xs-12.no-lr-padding")
+        .find(".text")
+        .text()
+        .trim();
+      const url = "ura.gov.sg" + $(this).find("a").attr("href");
+      uraCircular.push({ date, title, url });
+    });
+    console.log(uraCircular);
+  })
+  .catch((err) => console.log(err));
+
+axios(scdfURL)
+  .then((res) => {
+    const html = res.data;
+    const $ = cheerio.load(html);
+    const scdfCircular = [];
+
+    $(".row.borderBotSilver", html).each(function () {
+      const date = $(this).find(".f-right").find(".d-in").text();
+      const title = $(this).find(".bold.color-333").text();
+      const url = $(this).find("a").attr("href");
+      scdfCircular.push({ date, title, url });
+    });
+    console.log(scdfCircular);
+  })
+  .catch((err) => console.log(err));
+
+axios(bcaURL)
+  .then((res) => {
+    const html = res.data;
+    const $ = cheerio.load(html);
+    const bcaCircular = [];
+
+    $(".listItemWrap", html).each(function () {
+      const date = $(this).find(".sfnewsMetaInfo.sfmetainfo").text();
+      const title = $(this).find(".sfnewsTitle.sftitle").text().trim();
+      const url = $(this).find("a").attr("href");
+      bcaCircular.push({ date, title, url });
+    });
+    console.log(bcaCircular);
+  })
+  .catch((err) => console.log(err));
+
+app.listen(PORT, () => {
+  console.log(`Express app listening on port ${PORT}!`);
+});
