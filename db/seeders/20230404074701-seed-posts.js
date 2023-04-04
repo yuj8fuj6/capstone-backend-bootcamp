@@ -583,7 +583,7 @@ module.exports = {
           agency_id: 3,
           code: "Fire Code 2018",
           clause: "6.1.2",
-          content: "What are the requirements for fire extinguisher provisions",
+          content: "What are the requirements for fire extinguisher provisions?",
           upvote: 0,
           user_id: "1cd38b82-154e-4b21-bdef-692dcdba69e4",
           created_at: new Date(),
