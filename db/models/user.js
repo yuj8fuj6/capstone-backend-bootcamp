@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       this.hasOne(models.authority);
+      this.hasMany(models.post); 
     }
   }
   User.init(
