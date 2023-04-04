@@ -1,23 +1,19 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Post extends Model {
+  class Post_upvote extends Model {
     static associate(models) {
       this.belongsTo(models.user);
-      this.belongsTo(models.authority);
-      this.hasMany(models.post_upvote);
+      this.belongsTo(models.post);
     }
   }
-  Post.init(
+  Post_upvote.init(
     {
-      agency_id: {
+      upvote: DataTypes.BOOLEAN,
+      post_id: {
         type: DataTypes.INTEGER,
-        references: { model: "authority", key: "id" },
+        references: { model: "post", key: "id" },
       },
-      code: DataTypes.STRING,
-      clause: DataTypes.STRING,
-      content: DataTypes.TEXT,
-      upvote: DataTypes.INTEGER,
       user_id: {
         type: DataTypes.UUID,
         references: { model: "user", key: "id" },
@@ -25,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "post",
+      modelName: "post_upvote",
       underscored: true,
     },
   );
-  return Post;
+  return Post_upvote;
 };
