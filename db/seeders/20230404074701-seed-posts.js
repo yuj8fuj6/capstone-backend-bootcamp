@@ -407,6 +407,7 @@ module.exports = {
           clause: "3.5.1",
           content:
             "What is the minimum number of accessible vehicle parking lots for any development?",
+          upvote: 0,
           user_id: "b41c02f5-cae6-47fb-96de-08a87011bc85",
           created_at: new Date(),
           updated_at: new Date(),
@@ -418,6 +419,7 @@ module.exports = {
           clause: "4.2.4.3",
           content:
             "What is the maximum size of any obstruction attached to a wall in pedestrian areas?",
+          upvote: 0,
           user_id: "74940d25-c418-4c34-9915-a9ad1452aabb",
           created_at: new Date(),
           updated_at: new Date(),
@@ -429,6 +431,7 @@ module.exports = {
           clause: "4.2.4.5",
           content:
             "What are the requirements for bollards at entrance to walkways?",
+          upvote: 0,
           user_id: "1a7c0323-7b46-4c5d-ad94-776ad5fc2841",
           created_at: new Date(),
           updated_at: new Date(),
@@ -439,6 +442,7 @@ module.exports = {
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.4.2",
           content: "What is the minimum clear opening of doorways?",
+          upvote: 0,
           user_id: "ecd79eeb-cf33-4c48-a0d3-3162a52b7ff1",
           created_at: new Date(),
           updated_at: new Date(),
@@ -449,6 +453,7 @@ module.exports = {
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.4.8",
           content: "What kinds of door hardware are compliant?",
+          upvote: 0,
           user_id: "adec7416-ee7b-48d2-9db7-d027edd39456",
           created_at: new Date(),
           updated_at: new Date(),
@@ -460,6 +465,7 @@ module.exports = {
           clause: "5.2",
           content:
             "What are the minimum dimensions for an accessible individual washroom?",
+          upvote: 0,
           user_id: "0dd90cc1-0cf8-4a60-9b42-ac049d7fbb1c",
           created_at: new Date(),
           updated_at: new Date(),
@@ -470,6 +476,7 @@ module.exports = {
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "5.6.3",
           content: "What are the required washroom accessories?",
+          upvote: 0,
           user_id: "58bf2a16-c503-4cc1-9ad2-cdef6f79e8ea",
           created_at: new Date(),
           updated_at: new Date(),
