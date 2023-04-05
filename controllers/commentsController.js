@@ -138,8 +138,11 @@ const addOnePostVote = async (req, res) => {
       where: { post_id: post_id },
     });
     const currentPost = await post.findByPk(post_id);
-    currentPost.upvote = voteCount;
-    await currentPost.save[{ fields: ["upvote"] }];
+    await currentPost.update(
+      { upvote: voteCount },
+      { where: { post_id: post_id } },
+    );
+    await currentPost.save();
     return res.json(currentPost);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
@@ -159,11 +162,13 @@ const addOneThreadVote = async (req, res) => {
     }
     const voteCount = await thread_upvote.count({
       where: { thread_id: thread_id },
-      include: [{ model: thread }],
     });
     const currentThread = await thread.findByPk(thread_id);
-    currentThread.upvote = voteCount;
-    await currentThread.save[{ fields: ["upvote"] }];
+    await currentThread.update(
+      { upvote: voteCount },
+      { where: { thread_id: thread_id } },
+    );
+    await currentThread.save();
     return res.json(currentThread);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
