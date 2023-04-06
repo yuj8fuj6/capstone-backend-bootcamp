@@ -51,6 +51,20 @@ const getAllThreads = async (req, res) => {
   }
 };
 
+// Get thread count for each post
+const getThreadCount = async (req, res) => {
+  const { postID } = req.params;
+  try {
+    const threadCount = await thread.count({
+      where: { post_id: postID },
+      include: { model: post },
+    });
+    return res.json(threadCount);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
 // Retrieve one specific post
 
 const getOnePost = async (req, res) => {
@@ -185,4 +199,5 @@ module.exports = {
   deleteOneThread,
   addOnePostVote,
   addOneThreadVote,
+  getThreadCount,
 };
