@@ -43,6 +43,19 @@ const getAllThreads = async (req, res) => {
           model: user,
           attributes: ["name", "firm", "designation", "photo_url"],
         },
+        {
+          model: post,
+          include: [
+            {
+              model: authority,
+              attributes: ["name", "acronym", "logo_url"],
+            },
+            {
+              model: user,
+              attributes: ["name", "firm", "designation", "photo_url"],
+            },
+          ],
+        },
       ],
     });
     return res.json(threads);
