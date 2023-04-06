@@ -119,7 +119,29 @@ const addOnePost = async (req, res) => {
 const addOneThread = async (req, res) => {
   const userInput = req.body;
   try {
-    const newThread = await post.create(userInput);
+    const createThread = await thread.create(userInput);
+    const newThread = await thread.findOne({
+      where: { id: createThread.id },
+      include: [
+        {
+          model: user,
+          attributes: ["name", "firm", "designation", "photo_url"],
+        },
+        {
+          model: post,
+          include: [
+            {
+              model: authority,
+              attributes: ["name", "acronym", "logo_url"],
+            },
+            {
+              model: user,
+              attributes: ["name", "firm", "designation", "photo_url"],
+            },
+          ],
+        },
+      ],
+    });
     return res.json(newThread);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
