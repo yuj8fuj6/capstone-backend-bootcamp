@@ -107,7 +107,20 @@ const getOnePost = async (req, res) => {
 const addOnePost = async (req, res) => {
   const userInput = req.body;
   try {
-    const newPost = await post.create(userInput);
+    const createPost = await post.create(userInput);
+    const newPost = await post.findOne({
+      where: { id: createPost.id },
+      include: [
+        {
+          model: authority,
+          attributes: ["name", "acronym", "logo_url"],
+        },
+        {
+          model: user,
+          attributes: ["name", "firm", "designation", "photo_url"],
+        },
+      ],
+    });
     return res.json(newPost);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
