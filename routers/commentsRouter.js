@@ -11,7 +11,7 @@ router.post("/addThread", controllers.addOneThread);
 router.delete("/deletePost", controllers.deleteOnePost);
 router.delete("/deleteThread", controllers.deleteOneThread);
 router.post("/addPostVote", controllers.addOnePostVote);
-router.post("/addOneThreadVote", controllers.addOneThreadVote);
+router.post("/addThreadVote", controllers.addOneThreadVote);
 router.get("/:postID/count", controllers.getThreadCount);
 
 module.exports = router;

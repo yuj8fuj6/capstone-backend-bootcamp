@@ -199,7 +199,19 @@ const addOnePostVote = async (req, res) => {
     const voteCount = await post_upvote.count({
       where: { post_id: post_id },
     });
-    const currentPost = await post.findByPk(post_id);
+    const currentPost = await post.findOne({
+      where: { id: post_id },
+      include: [
+        {
+          model: authority,
+          attributes: ["name", "acronym", "logo_url"],
+        },
+        {
+          model: user,
+          attributes: ["name", "firm", "designation", "photo_url"],
+        },
+      ],
+    });
     await currentPost.update(
       { upvote: voteCount },
       { where: { post_id: post_id } },
@@ -225,7 +237,28 @@ const addOneThreadVote = async (req, res) => {
     const voteCount = await thread_upvote.count({
       where: { thread_id: thread_id },
     });
-    const currentThread = await thread.findByPk(thread_id);
+    const currentThread = await thread.findOne({
+      where: { id: thread_id },
+      include: [
+        {
+          model: user,
+          attributes: ["name", "firm", "designation", "photo_url"],
+        },
+        {
+          model: post,
+          include: [
+            {
+              model: authority,
+              attributes: ["name", "acronym", "logo_url"],
+            },
+            {
+              model: user,
+              attributes: ["name", "firm", "designation", "photo_url"],
+            },
+          ],
+        },
+      ],
+    });
     await currentThread.update(
       { upvote: voteCount },
       { where: { thread_id: thread_id } },
