@@ -22,9 +22,11 @@ app.use(express.json());
 //import routers
 const mapsRouter = require("./routers/mapsRouter");
 const usersRouter = require("./routers/usersRouter");
+const commentsRouter = require("./routers/commentsRouter");
 
 app.use("/maps", mapsRouter);
 app.use("/users", usersRouter);
+app.use("/comments", commentsRouter);
 
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);

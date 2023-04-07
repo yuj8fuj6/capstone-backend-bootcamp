@@ -7,8 +7,8 @@ module.exports = {
       "posts",
       [
         {
-          id: 1,
-          agency_id: 1,
+          // id: 1,
+          authority_id: 1,
           code: "Bungalows or Detached Houses Handbook",
           clause: "NA",
           content:
@@ -19,8 +19,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 2,
-          agency_id: 1,
+          // id: 2,
+          authority_id: 1,
           code: "Bungalows or Detached Houses Handbook",
           clause: "NA",
           content:
@@ -31,8 +31,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 3,
-          agency_id: 1,
+          // id: 3,
+          authority_id: 1,
           code: "Bungalows or Detached Houses Handbook",
           clause: "NA",
           content:
@@ -43,8 +43,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 4,
-          agency_id: 1,
+          // id: 4,
+          authority_id: 1,
           code: "Bungalows or Detached Houses Handbook",
           clause: "NA",
           content:
@@ -55,8 +55,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 5,
-          agency_id: 1,
+          // id: 5,
+          authority_id: 1,
           code: "Bungalows or Detached Houses Handbook",
           clause: "NA",
           content:
@@ -67,8 +67,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 6,
-          agency_id: 1,
+          // id: 6,
+          authority_id: 1,
           code: "Business 2 (Industrial) Handbook",
           clause: "NA",
           content:
@@ -79,8 +79,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 7,
-          agency_id: 1,
+          // id: 7,
+          authority_id: 1,
           code: "Business 2 (Industrial) Handbook",
           clause: "NA",
           content:
@@ -91,8 +91,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 8,
-          agency_id: 1,
+          // id: 8,
+          authority_id: 1,
           code: "Business 2 (Industrial) Handbook",
           clause: "NA",
           content:
@@ -103,8 +103,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 9,
-          agency_id: 1,
+          // id: 9,
+          authority_id: 1,
           code: "Business 2 (Industrial) Handbook",
           clause: "NA",
           content:
@@ -115,8 +115,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 10,
-          agency_id: 1,
+          // id: 10,
+          authority_id: 1,
           code: "Business 2 (Industrial) Handbook",
           clause: "NA",
           content:
@@ -127,8 +127,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 11,
-          agency_id: 1,
+          // id: 11,
+          authority_id: 1,
           code: "Sports and Recreation Handbook",
           clause: "NA",
           content:
@@ -139,8 +139,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 12,
-          agency_id: 1,
+          // id: 12,
+          authority_id: 1,
           code: "Sports and Recreation Handbook",
           clause: "NA",
           content:
@@ -151,8 +151,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 13,
-          agency_id: 1,
+          // id: 13,
+          authority_id: 1,
           code: "Sports and Recreation Handbook",
           clause: "NA",
           content:
@@ -163,8 +163,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 14,
-          agency_id: 1,
+          // id: 14,
+          authority_id: 1,
           code: "Sports and Recreation Handbook",
           clause: "NA",
           content:
@@ -175,8 +175,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 15,
-          agency_id: 1,
+          // id: 15,
+          authority_id: 1,
           code: "Sports and Recreation Handbook",
           clause: "NA",
           content:
@@ -187,8 +187,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 16,
-          agency_id: 1,
+          // id: 16,
+          authority_id: 1,
           code: "Gross Floor Area Handbook",
           clause: "NA",
           content:
@@ -199,8 +199,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 17,
-          agency_id: 1,
+          // id: 17,
+          authority_id: 1,
           code: "Gross Floor Area Handbook",
           clause: "NA",
           content:
@@ -211,8 +211,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 18,
-          agency_id: 1,
+          // id: 18,
+          authority_id: 1,
           code: "Gross Floor Area Handbook",
           clause: "NA",
           content:
@@ -223,8 +223,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 19,
-          agency_id: 1,
+          // id: 19,
+          authority_id: 1,
           code: "Gross Floor Area Handbook",
           clause: "NA",
           content:
@@ -235,8 +235,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 20,
-          agency_id: 1,
+          // id: 20,
+          authority_id: 1,
           code: "Gross Floor Area Handbook",
           clause: "NA",
           content:
@@ -247,8 +247,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 21,
-          agency_id: 2,
+          // id: 21,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "C.3",
           content:
@@ -259,8 +259,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 22,
-          agency_id: 2,
+          // id: 22,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "E.3.3",
           content:
@@ -271,8 +271,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 23,
-          agency_id: 2,
+          // id: 23,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "E.3.5",
           content:
@@ -283,8 +283,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 24,
-          agency_id: 2,
+          // id: 24,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "E.3.6",
           content:
@@ -295,8 +295,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 25,
-          agency_id: 2,
+          // id: 25,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "E.3.7.2",
           content: "Do perforated steel staircases require nosing?",
@@ -306,8 +306,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 26,
-          agency_id: 2,
+          // id: 26,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "G.2.3",
           content:
@@ -318,8 +318,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 27,
-          agency_id: 2,
+          // id: 27,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "H.3.4.3",
           content:
@@ -330,8 +330,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 28,
-          agency_id: 2,
+          // id: 28,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "I.3.3",
           content:
@@ -342,8 +342,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 29,
-          agency_id: 2,
+          // id: 29,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "K.3.2",
           content: "Must a CCTV be installed in a lift?",
@@ -353,8 +353,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 30,
-          agency_id: 2,
+          // id: 30,
+          authority_id: 2,
           code: "Approved Document - Acceptable Solutions",
           clause: "O.2",
           content:
@@ -365,8 +365,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 31,
-          agency_id: 2,
+          // id: 31,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "2.1.2",
           content:
@@ -377,8 +377,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 32,
-          agency_id: 2,
+          // id: 32,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "2.5",
           content:
@@ -389,8 +389,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 33,
-          agency_id: 2,
+          // id: 33,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "3.3.1",
           content:
@@ -401,82 +401,89 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 34,
-          agency_id: 2,
+          // id: 34,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "3.5.1",
           content:
             "What is the minimum number of accessible vehicle parking lots for any development?",
+          upvote: 0,
           user_id: "b41c02f5-cae6-47fb-96de-08a87011bc85",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 35,
-          agency_id: 2,
+          // id: 35,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.2.4.3",
           content:
             "What is the maximum size of any obstruction attached to a wall in pedestrian areas?",
+          upvote: 0,
           user_id: "74940d25-c418-4c34-9915-a9ad1452aabb",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 36,
-          agency_id: 2,
+          // id: 36,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.2.4.5",
           content:
             "What are the requirements for bollards at entrance to walkways?",
+          upvote: 0,
           user_id: "1a7c0323-7b46-4c5d-ad94-776ad5fc2841",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 37,
-          agency_id: 2,
+          // id: 37,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.4.2",
           content: "What is the minimum clear opening of doorways?",
+          upvote: 0,
           user_id: "ecd79eeb-cf33-4c48-a0d3-3162a52b7ff1",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 38,
-          agency_id: 2,
+          // id: 38,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "4.4.8",
           content: "What kinds of door hardware are compliant?",
+          upvote: 0,
           user_id: "adec7416-ee7b-48d2-9db7-d027edd39456",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 39,
-          agency_id: 2,
+          // id: 39,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "5.2",
           content:
             "What are the minimum dimensions for an accessible individual washroom?",
+          upvote: 0,
           user_id: "0dd90cc1-0cf8-4a60-9b42-ac049d7fbb1c",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 40,
-          agency_id: 2,
+          // id: 40,
+          authority_id: 2,
           code: "Code on Accessibility in the Built Environment 2019",
           clause: "5.6.3",
           content: "What are the required washroom accessories?",
+          upvote: 0,
           user_id: "58bf2a16-c503-4cc1-9ad2-cdef6f79e8ea",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
-          id: 41,
-          agency_id: 3,
+          // id: 41,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.2",
           content:
@@ -487,8 +494,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 42,
-          agency_id: 3,
+          // id: 42,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.2.6",
           content:
@@ -499,8 +506,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 43,
-          agency_id: 3,
+          // id: 43,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.2.7",
           content: "What is the minimum width of any exit access door?",
@@ -510,8 +517,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 44,
-          agency_id: 3,
+          // id: 44,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.2.9",
           content: "How do we measure the clear width of an exit staircase?",
@@ -521,8 +528,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 45,
-          agency_id: 3,
+          // id: 45,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.2.10",
           content:
@@ -533,8 +540,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 46,
-          agency_id: 3,
+          // id: 46,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.3.1",
           content: "What does the fire escape plan need to contain?",
@@ -544,8 +551,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 47,
-          agency_id: 3,
+          // id: 47,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.3.3",
           content:
@@ -556,8 +563,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 48,
-          agency_id: 3,
+          // id: 48,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.3.12",
           content: "What are the requirements for remoteness of exits?",
@@ -567,8 +574,8 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 49,
-          agency_id: 3,
+          // id: 49,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "2.4.2",
           content:
@@ -579,11 +586,12 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          id: 50,
-          agency_id: 3,
+          // id: 50,
+          authority_id: 3,
           code: "Fire Code 2018",
           clause: "6.1.2",
-          content: "What are the requirements for fire extinguisher provisions?",
+          content:
+            "What are the requirements for fire extinguisher provisions?",
           upvote: 0,
           user_id: "1cd38b82-154e-4b21-bdef-692dcdba69e4",
           created_at: new Date(),

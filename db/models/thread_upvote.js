@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class Thread_upvote extends Model {
     static associate(models) {
       this.belongsTo(models.user);
-      this.belongsTo(models.post);
+      this.belongsTo(models.thread);
     }
   }
   Thread_upvote.init(

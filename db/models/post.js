@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Post.init(
     {
-      agency_id: {
+      authority_id: {
         type: DataTypes.INTEGER,
         references: { model: "authority", key: "id" },
       },
