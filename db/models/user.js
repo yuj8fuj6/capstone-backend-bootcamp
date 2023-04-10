@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.post_upvote);
       this.hasMany(models.thread);
       this.hasMany(models.thread_upvote);
+      this.hasMany(models.building);
     }
   }
   User.init(
