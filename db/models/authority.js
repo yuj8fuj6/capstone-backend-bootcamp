@@ -5,6 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.user);
       this.hasMany(models.post);
+      this.hasMany(models.gfa_code);
+      this.hasMany(models.planning_code);
+      this.hasMany(models.accessibility_code);
     }
   }
   Authority.init(
