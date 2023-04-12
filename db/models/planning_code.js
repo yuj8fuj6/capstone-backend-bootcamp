@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Planning_code extends Model {
     static associate(models) {
       this.belongsTo(models.authority);
+      this.belongsToMany(models.model_building, {
+        through: "planning_code_model_buildings",
+      });
     }
   }
   Planning_code.init(

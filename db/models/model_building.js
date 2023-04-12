@@ -2,7 +2,23 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Model_building extends Model {
-    static associate(models) {}
+    static associate(models) {
+      this.belongsToMany(models.gfa_code, {
+        through: "gfa_code_model_buildings",
+      });
+      this.belongsToMany(models.planning_code, {
+        through: "planning_code_model_buildings",
+      });
+      this.belongsToMany(models.accessibility_code, {
+        through: "accessibility_code_model_buildings",
+      });
+      this.belongsToMany(models.building_code, {
+        through: "building_code_model_buildings",
+      });
+      this.belongsToMany(models.fire_code, {
+        through: "fire_code_model_buildings",
+      });
+    }
   }
   Model_building.init(
     {

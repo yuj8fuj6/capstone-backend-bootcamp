@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Accessibility_code extends Model {
     static associate(models) {
       this.belongsTo(models.authority);
+      this.belongsToMany(models.model_building, {
+        through: "accessibility_code_model_buildings",
+      });
     }
   }
   Accessibility_code.init(

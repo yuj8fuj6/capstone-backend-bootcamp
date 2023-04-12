@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
   class Gfa_code extends Model {
     static associate(models) {
       this.belongsTo(models.authority);
+      this.belongsToMany(models.model_building, {
+        through: "gfa_code_model_buildings",
+      });
     }
   }
   Gfa_code.init(
