@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.thread);
       this.hasMany(models.thread_upvote);
       this.hasMany(models.building);
+      this.hasMany(models.gfa_code_check);
+      this.hasMany(models.planning_code_check);
+      this.hasMany(models.accessibility_code_check);
+      this.hasMany(models.building_code_check);
+      this.hasMany(models.fire_code_check);
     }
   }
   User.init(

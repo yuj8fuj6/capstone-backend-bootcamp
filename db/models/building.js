@@ -4,6 +4,11 @@ module.exports = (sequelize, DataTypes) => {
   class Building extends Model {
     static associate(models) {
       this.belongsTo(models.user);
+      this.hasMany(models.gfa_code_check);
+      this.hasMany(models.planning_code_check);
+      this.hasMany(models.accessibility_code_check);
+      this.hasMany(models.building_code_check);
+      this.hasMany(models.fire_code_check);
     }
   }
   Building.init(

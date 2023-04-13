@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.model_building, {
         through: "gfa_code_model_buildings",
       });
+      this.hasOne(models.gfa_code_check);
     }
   }
   Gfa_code.init(

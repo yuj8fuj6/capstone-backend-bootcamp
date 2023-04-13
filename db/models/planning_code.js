@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.model_building, {
         through: "planning_code_model_buildings",
       });
+      this.hasOne(models.planning_code_check);
     }
   }
   Planning_code.init(
