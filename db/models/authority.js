@@ -3,7 +3,7 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Authority extends Model {
     static associate(models) {
-      this.belongsTo(models.user);
+      this.belongsTo(models.user, { foreignKey: "admin_id" });
       this.hasMany(models.post);
       this.hasMany(models.gfa_code);
       this.hasMany(models.planning_code);
