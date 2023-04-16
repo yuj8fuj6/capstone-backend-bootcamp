@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.authority);
       this.belongsToMany(models.model_building, {
         through: "accessibility_code_model_buildings",
+        foreignKey: "code_id",
       });
       this.hasOne(models.accessibility_code_check);
     }

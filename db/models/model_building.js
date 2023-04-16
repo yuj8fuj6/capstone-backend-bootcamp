@@ -5,18 +5,23 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsToMany(models.gfa_code, {
         through: "gfa_code_model_buildings",
+        foreignKey: "building_id",
       });
       this.belongsToMany(models.planning_code, {
         through: "planning_code_model_buildings",
+        foreignKey: "building_id",
       });
       this.belongsToMany(models.accessibility_code, {
         through: "accessibility_code_model_buildings",
+        foreignKey: "building_id",
       });
       this.belongsToMany(models.building_code, {
         through: "building_code_model_buildings",
+        foreignKey: "building_id",
       });
       this.belongsToMany(models.fire_code, {
         through: "fire_code_model_buildings",
+        foreignKey: "building_id",
       });
     }
   }

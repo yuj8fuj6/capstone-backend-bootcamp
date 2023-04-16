@@ -8,9 +8,9 @@ module.exports = {
       [
         {
           building_type: "Industrial",
-          ura_category: "Business 2",
-          scdf_category: "VI",
-          usage: "Factory",
+          ura_category: "Business 2 (Industrial)",
+          scdf_category: "VI - Factory",
+          usage: "Factory with Ancillary Offices",
           floor_no: "[1, 5]",
           basement_floor_no: "[0, 1]",
           building_height: "[3.0, 15.0]",
