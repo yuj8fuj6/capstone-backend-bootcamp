@@ -4,6 +4,10 @@ const {
   building,
   model_building,
   gfa_code,
+  planning_code,
+  accessibility_code,
+  building_code,
+  fire_code,
 } = require("../db/models");
 
 const e = require("express");
@@ -64,6 +68,18 @@ const addOneBuilding = async (req, res) => {
             {
               model: gfa_code,
             },
+            {
+              model: planning_code,
+            },
+            {
+              model: accessibility_code,
+            },
+            {
+              model: building_code,
+            },
+            {
+              model: fire_code,
+            },
           ],
         });
         const newBuilding = await building.findOrCreate({
@@ -106,6 +122,18 @@ const addOneBuilding = async (req, res) => {
             {
               model: gfa_code,
             },
+            {
+              model: planning_code,
+            },
+            {
+              model: accessibility_code,
+            },
+            {
+              model: building_code,
+            },
+            {
+              model: fire_code,
+            },
           ],
         });
         const newBuilding = await building.findOrCreate({
@@ -147,6 +175,18 @@ const addOneBuilding = async (req, res) => {
           include: [
             {
               model: gfa_code,
+            },
+            {
+              model: planning_code,
+            },
+            {
+              model: accessibility_code,
+            },
+            {
+              model: building_code,
+            },
+            {
+              model: fire_code,
             },
           ],
         });
