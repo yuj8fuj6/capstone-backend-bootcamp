@@ -61,6 +61,10 @@ module.exports = {
         type: Sequelize.UUID,
         references: { model: "users", key: "id" },
       },
+      model_building_id: {
+        type: Sequelize.INTEGER,
+        references: { model: "model_buildings", key: "id" },
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

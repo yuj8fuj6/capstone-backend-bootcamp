@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.accessibility_code_check);
       this.hasMany(models.building_code_check);
       this.hasMany(models.fire_code_check);
+      this.belongsTo(models.model_building);
     }
   }
   Building.init(
@@ -32,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
       user_id: {
         type: DataTypes.UUID,
         references: { model: "user", key: "id" },
+      },
+      model_building_id: {
+        type: DataTypes.INTEGER,
+        references: { model: "model_building", key: "id" },
       },
     },
     {

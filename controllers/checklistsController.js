@@ -8,6 +8,11 @@ const {
   accessibility_code,
   building_code,
   fire_code,
+  gfa_code_check,
+  planning_code_check,
+  accessibility_code_check,
+  building_code_check,
+  fire_code_check,
 } = require("../db/models");
 
 const e = require("express");
@@ -29,6 +34,8 @@ const getAllAuthorities = async (req, res) => {
     return res.status(400).json({ error: true, msg: err });
   }
 };
+
+// Add new building and check against model building
 
 const addOneBuilding = async (req, res) => {
   const {
@@ -101,6 +108,7 @@ const addOneBuilding = async (req, res) => {
             block_no: block_no,
             street_name: street_name,
             user_id: user_id,
+            model_building_id: 1,
           },
         });
         return res.json(modelBuilding);
@@ -155,6 +163,7 @@ const addOneBuilding = async (req, res) => {
             block_no: block_no,
             street_name: street_name,
             user_id: user_id,
+            model_building_id: 1,
           },
         });
         return res.json(modelBuilding);
@@ -209,6 +218,7 @@ const addOneBuilding = async (req, res) => {
             block_no: block_no,
             street_name: street_name,
             user_id: user_id,
+            model_building_id: 1,
           },
         });
         return res.json(modelBuilding);
@@ -219,7 +229,187 @@ const addOneBuilding = async (req, res) => {
   }
 };
 
+// Get all buildings
+
+const getAllBuildings = async (req, res) => {
+  const { user_id } = req.params;
+  try {
+    const allBuildings = await building.findAll({
+      where: { user_id: user_id },
+      include: [
+        {
+          model: model_building,
+          include: [
+            {
+              model: gfa_code,
+            },
+            {
+              model: planning_code,
+            },
+            {
+              model: accessibility_code,
+            },
+            {
+              model: building_code,
+            },
+            {
+              model: fire_code,
+            },
+          ],
+        },
+      ],
+    });
+    return res.json(allBuildings);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Check GFA code
+
+const checkGfaCode = async (req, res) => {
+  const { gfa_code_id, check, building_id, user_id } = req.body;
+  try {
+    const [newGfaCodeCheck, created] = await gfa_code_check.findOrCreate({
+      where: {
+        gfa_code_id: gfa_code_id,
+        check: check,
+        building_id: building_id,
+        user_id: user_id,
+      },
+      include: [
+        {
+          model: gfa_code,
+        },
+      ],
+    });
+    if (!created) {
+      await newGfaCodeCheck.destroy();
+    }
+    return res.json(newGfaCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Check Planning code
+
+const checkPlanningCode = async (req, res) => {
+  const { planning_code_id, check, building_id, user_id } = req.body;
+  try {
+    const [newPlanningCodeCheck, created] =
+      await planning_code_check.findOrCreate({
+        where: {
+          planning_code_id: planning_code_id,
+          check: check,
+          building_id: building_id,
+          user_id: user_id,
+        },
+        include: [
+          {
+            model: planning_code,
+          },
+        ],
+      });
+    if (!created) {
+      await newPlanningCodeCheck.destroy();
+    }
+    return res.json(newPlanningCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Check Accessibility code
+
+const checkAccessibilityCode = async (req, res) => {
+  const { accessibility_code_id, check, building_id, user_id } = req.body;
+  try {
+    const [newAccessibilityCodeCheck, created] =
+      await accessibility_code_check.findOrCreate({
+        where: {
+          accessibility_code_id: accessibility_code_id,
+          check: check,
+          building_id: building_id,
+          user_id: user_id,
+        },
+        include: [
+          {
+            model: accessibility_code,
+          },
+        ],
+      });
+    if (!created) {
+      await newAccessibilityCodeCheck.destroy();
+    }
+    return res.json(newAccessibilityCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Check Building code
+
+const checkBuildingCode = async (req, res) => {
+  const { building_code_id, check, building_id, user_id } = req.body;
+  try {
+    const [newBuildingCodeCheck, created] =
+      await building_code_check.findOrCreate({
+        where: {
+          building_code_id: building_code_id,
+          check: check,
+          building_id: building_id,
+          user_id: user_id,
+        },
+        include: [
+          {
+            model: building_code,
+          },
+        ],
+      });
+    if (!created) {
+      await newBuildingCodeCheck.destroy();
+    }
+    return res.json(newBuildingCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Check Fire code
+
+const checkFireCode = async (req, res) => {
+  const { fire_code_id, check, building_id, user_id } = req.body;
+  try {
+    const [newFireCodeCheck, created] = await fire_code_check.findOrCreate({
+      where: {
+        fire_code_id: fire_code_id,
+        check: check,
+        building_id: building_id,
+        user_id: user_id,
+      },
+      include: [
+        {
+          model: building_code,
+        },
+      ],
+    });
+    if (!created) {
+      await newFireCodeCheck.destroy();
+    }
+    return res.json(newFireCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
 module.exports = {
   getAllAuthorities,
   addOneBuilding,
+  getAllBuildings,
+  checkGfaCode,
+  checkPlanningCode,
+  checkAccessibilityCode,
+  checkBuildingCode,
+  checkFireCode,
 };

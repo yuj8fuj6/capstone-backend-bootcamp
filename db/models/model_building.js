@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         through: "fire_code_model_buildings",
         foreignKey: "building_id",
       });
+      this.hasMany(models.building);
     }
   }
   Model_building.init(
