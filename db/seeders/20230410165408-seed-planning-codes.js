@@ -14,6 +14,22 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
+        {
+          authority_id: 1,
+          header: "Test2",
+          content: "Test Content2",
+          url: "www.google.com",
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          authority_id: 1,
+          header: "Test3",
+          content: "Test Content3",
+          url: "www.google.com",
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {},
     );

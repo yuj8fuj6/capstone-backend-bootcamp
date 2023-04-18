@@ -10,5 +10,13 @@ router.post("/checkPlanningCode", controllers.checkPlanningCode);
 router.post("/checkAccessibilityCode", controllers.checkAccessibilityCode);
 router.post("/checkBuildingCode", controllers.checkBuildingCode);
 router.post("/checkFireCode", controllers.checkFireCode);
+router.get("/getAllCheckedGfa", controllers.getAllCheckedGfaCode);
+router.get("/getAllCheckedPlanning", controllers.getAllCheckedPlanningCode);
+router.get(
+  "/getAllCheckedAccessibility",
+  controllers.getAllCheckedAccessibilityCode,
+);
+router.get("/getAllCheckedBuilding", controllers.getAllCheckedBuildingCode);
+router.get("/getAllCheckedFire", controllers.getAllCheckedFireCode);
 
 module.exports = router;

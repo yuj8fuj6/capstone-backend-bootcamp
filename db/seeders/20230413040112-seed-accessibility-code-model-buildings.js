@@ -12,6 +12,18 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
+        {
+          code_id: 2,
+          building_id: 1,
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
+        {
+          code_id: 3,
+          building_id: 1,
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {},
     );

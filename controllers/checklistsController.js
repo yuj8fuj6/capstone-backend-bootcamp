@@ -390,7 +390,7 @@ const checkFireCode = async (req, res) => {
       },
       include: [
         {
-          model: building_code,
+          model: fire_code,
         },
       ],
     });
@@ -398,6 +398,91 @@ const checkFireCode = async (req, res) => {
       await newFireCodeCheck.destroy();
     }
     return res.json(newFireCodeCheck);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Get all checked GFA code
+
+const getAllCheckedGfaCode = async (req, res) => {
+  try {
+    const allCheckedGfaCode = await gfa_code_check.findAll({
+      include: [
+        {
+          model: gfa_code,
+        },
+      ],
+    });
+    return res.json(allCheckedGfaCode);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Get all checked Planning code
+
+const getAllCheckedPlanningCode = async (req, res) => {
+  try {
+    const allCheckedPlanningCode = await planning_code_check.findAll({
+      include: [
+        {
+          model: planning_code,
+        },
+      ],
+    });
+    return res.json(allCheckedPlanningCode);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Get all checked Accessibility code
+
+const getAllCheckedAccessibilityCode = async (req, res) => {
+  try {
+    const allCheckedAccessibilityCode = await accessibility_code_check.findAll({
+      include: [
+        {
+          model: accessibility_code,
+        },
+      ],
+    });
+    return res.json(allCheckedAccessibilityCode);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Get all checked Building code
+
+const getAllCheckedBuildingCode = async (req, res) => {
+  try {
+    const allCheckedBuildingCode = await building_code_check.findAll({
+      include: [
+        {
+          model: building_code,
+        },
+      ],
+    });
+    return res.json(allCheckedBuildingCode);
+  } catch (err) {
+    return res.status(400).json({ error: true, msg: err });
+  }
+};
+
+// Get all checked Fire code
+
+const getAllCheckedFireCode = async (req, res) => {
+  try {
+    const allCheckedFireCode = await fire_code_check.findAll({
+      include: [
+        {
+          model: fire_code,
+        },
+      ],
+    });
+    return res.json(allCheckedFireCode);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
   }
@@ -412,4 +497,9 @@ module.exports = {
   checkAccessibilityCode,
   checkBuildingCode,
   checkFireCode,
+  getAllCheckedGfaCode,
+  getAllCheckedPlanningCode,
+  getAllCheckedAccessibilityCode,
+  getAllCheckedBuildingCode,
+  getAllCheckedFireCode,
 };
