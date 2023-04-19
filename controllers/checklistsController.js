@@ -69,49 +69,49 @@ const addOneBuilding = async (req, res) => {
         basement_floor_no == 0 &&
         habitable_height <= 24
       ) {
-        const modelBuilding = await model_building.findOne({
-          where: { id: 1 },
-          include: [
-            {
-              model: gfa_code,
-            },
-            {
-              model: planning_code,
-            },
-            {
-              model: accessibility_code,
-            },
-            {
-              model: building_code,
-            },
-            {
-              model: fire_code,
-            },
-          ],
+        const newBuilding = await building.create({
+          building_type: building_type,
+          ura_category: ura_category,
+          scdf_category: scdf_category,
+          usage: usage,
+          floor_no: floor_no,
+          basement_floor_no: basement_floor_no,
+          building_height: building_height,
+          avg_floor_height: avg_floor_height,
+          gfa: gfa,
+          site_area: site_area,
+          plot_ratio: plot_ratio,
+          site_coverage: site_coverage,
+          habitable_height: habitable_height,
+          postal_code: postal_code,
+          block_no: block_no,
+          street_name: street_name,
+          user_id: user_id,
+          model_building_id: 1,
         });
-        const newBuilding = await building.findOrCreate({
-          where: {
-            building_type: building_type,
-            ura_category: ura_category,
-            scdf_category: scdf_category,
-            usage: usage,
-            floor_no: floor_no,
-            basement_floor_no: basement_floor_no,
-            building_height: building_height,
-            avg_floor_height: avg_floor_height,
-            gfa: gfa,
-            site_area: site_area,
-            plot_ratio: plot_ratio,
-            site_coverage: site_coverage,
-            habitable_height: habitable_height,
-            postal_code: postal_code,
-            block_no: block_no,
-            street_name: street_name,
-            user_id: user_id,
-            model_building_id: 1,
+        const newModelBuilding = await building.findByPk(newBuilding.id, {
+          include: {
+            model: model_building,
+            include: [
+              {
+                model: gfa_code,
+              },
+              {
+                model: planning_code,
+              },
+              {
+                model: accessibility_code,
+              },
+              {
+                model: building_code,
+              },
+              {
+                model: fire_code,
+              },
+            ],
           },
         });
-        return res.json(modelBuilding);
+        return res.json(newModelBuilding);
       }
     } else if (
       building_type === "Residential" &&
@@ -277,16 +277,15 @@ const checkGfaCode = async (req, res) => {
         building_id: building_id,
         user_id: user_id,
       },
-      include: [
-        {
-          model: gfa_code,
-        },
-      ],
     });
     if (!created) {
       await newGfaCodeCheck.destroy();
     }
-    return res.json(newGfaCodeCheck);
+    const confirmedNewGfaCodeCheck = await gfa_code_check.findByPk(
+      newGfaCodeCheck.id,
+      { include: { model: gfa_code } },
+    );
+    return res.json(confirmedNewGfaCodeCheck);
   } catch (err) {
     return res.status(400).json({ error: true, msg: err });
   }
@@ -305,11 +304,6 @@ const checkPlanningCode = async (req, res) => {
           building_id: building_id,
           user_id: user_id,
         },
-        include: [
-          {
-            model: planning_code,
-          },
-        ],
       });
     if (!created) {
       await newPlanningCodeCheck.destroy();
