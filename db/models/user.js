@@ -3,11 +3,17 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      this.hasOne(models.authority);
+      this.hasOne(models.authority, { foreignKey: "id" });
       this.hasMany(models.post);
       this.hasMany(models.post_upvote);
       this.hasMany(models.thread);
       this.hasMany(models.thread_upvote);
+      this.hasMany(models.building);
+      this.hasMany(models.gfa_code_check);
+      this.hasMany(models.planning_code_check);
+      this.hasMany(models.accessibility_code_check);
+      this.hasMany(models.building_code_check);
+      this.hasMany(models.fire_code_check);
     }
   }
   User.init(

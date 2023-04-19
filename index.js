@@ -23,10 +23,12 @@ app.use(express.json());
 const mapsRouter = require("./routers/mapsRouter");
 const usersRouter = require("./routers/usersRouter");
 const commentsRouter = require("./routers/commentsRouter");
+const checklistsRouter = require("./routers/checklistsRouter");
 
 app.use("/maps", mapsRouter);
 app.use("/users", usersRouter);
 app.use("/comments", commentsRouter);
+app.use("/checklists", checklistsRouter);
 
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);
