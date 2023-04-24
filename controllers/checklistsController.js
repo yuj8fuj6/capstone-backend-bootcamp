@@ -63,9 +63,52 @@ const addOneBuilding = async (req, res) => {
       ura_category === "Business 2 (Industrial)" &&
       scdf_category === "VI - Factory"
     ) {
-      if (
-        floor_no >= 1 &&
-        floor_no < 6 &&
+      if (floor_no == 1 && basement_floor_no == 0 && habitable_height <= 24) {
+        const newBuilding = await building.create({
+          building_type: building_type,
+          ura_category: ura_category,
+          scdf_category: scdf_category,
+          usage: usage,
+          floor_no: floor_no,
+          basement_floor_no: basement_floor_no,
+          building_height: building_height,
+          avg_floor_height: avg_floor_height,
+          gfa: gfa,
+          site_area: site_area,
+          plot_ratio: plot_ratio,
+          site_coverage: site_coverage,
+          habitable_height: habitable_height,
+          postal_code: postal_code,
+          block_no: block_no,
+          street_name: street_name,
+          user_id: user_id,
+          model_building_id: 1,
+        });
+        const newModelBuilding = await building.findByPk(newBuilding.id, {
+          include: {
+            model: model_building,
+            include: [
+              {
+                model: gfa_code,
+              },
+              {
+                model: planning_code,
+              },
+              {
+                model: accessibility_code,
+              },
+              {
+                model: building_code,
+              },
+              {
+                model: fire_code,
+              },
+            ],
+          },
+        });
+        return res.json(newModelBuilding);
+      } else if (
+        floor_no > 1 &&
         basement_floor_no == 0 &&
         habitable_height <= 24
       ) {
@@ -87,7 +130,55 @@ const addOneBuilding = async (req, res) => {
           block_no: block_no,
           street_name: street_name,
           user_id: user_id,
-          model_building_id: 1,
+          model_building_id: 2,
+        });
+        const newModelBuilding = await building.findByPk(newBuilding.id, {
+          include: {
+            model: model_building,
+            include: [
+              {
+                model: gfa_code,
+              },
+              {
+                model: planning_code,
+              },
+              {
+                model: accessibility_code,
+              },
+              {
+                model: building_code,
+              },
+              {
+                model: fire_code,
+              },
+            ],
+          },
+        });
+        return res.json(newModelBuilding);
+      } else if (
+        floor_no > 1 &&
+        basement_floor_no > 0 &&
+        habitable_height <= 24
+      ) {
+        const newBuilding = await building.create({
+          building_type: building_type,
+          ura_category: ura_category,
+          scdf_category: scdf_category,
+          usage: usage,
+          floor_no: floor_no,
+          basement_floor_no: basement_floor_no,
+          building_height: building_height,
+          avg_floor_height: avg_floor_height,
+          gfa: gfa,
+          site_area: site_area,
+          plot_ratio: plot_ratio,
+          site_coverage: site_coverage,
+          habitable_height: habitable_height,
+          postal_code: postal_code,
+          block_no: block_no,
+          street_name: street_name,
+          user_id: user_id,
+          model_building_id: 3,
         });
         const newModelBuilding = await building.findByPk(newBuilding.id, {
           include: {
@@ -120,7 +211,7 @@ const addOneBuilding = async (req, res) => {
     ) {
       if (
         floor_no >= 1 &&
-        floor_no < 6 &&
+        floor_no <= 3 &&
         basement_floor_no == 0 &&
         habitable_height <= 24
       ) {
@@ -142,7 +233,56 @@ const addOneBuilding = async (req, res) => {
           block_no: block_no,
           street_name: street_name,
           user_id: user_id,
-          model_building_id: 1,
+          model_building_id: 4,
+        });
+        const newModelBuilding = await building.findByPk(newBuilding.id, {
+          include: {
+            model: model_building,
+            include: [
+              {
+                model: gfa_code,
+              },
+              {
+                model: planning_code,
+              },
+              {
+                model: accessibility_code,
+              },
+              {
+                model: building_code,
+              },
+              {
+                model: fire_code,
+              },
+            ],
+          },
+        });
+        return res.json(newModelBuilding);
+      } else if (
+        floor_no >= 1 &&
+        floor_no <= 3 &&
+        basement_floor_no > 0 &&
+        habitable_height <= 24
+      ) {
+        const newBuilding = await building.create({
+          building_type: building_type,
+          ura_category: ura_category,
+          scdf_category: scdf_category,
+          usage: usage,
+          floor_no: floor_no,
+          basement_floor_no: basement_floor_no,
+          building_height: building_height,
+          avg_floor_height: avg_floor_height,
+          gfa: gfa,
+          site_area: site_area,
+          plot_ratio: plot_ratio,
+          site_coverage: site_coverage,
+          habitable_height: habitable_height,
+          postal_code: postal_code,
+          block_no: block_no,
+          street_name: street_name,
+          user_id: user_id,
+          model_building_id: 5,
         });
         const newModelBuilding = await building.findByPk(newBuilding.id, {
           include: {
@@ -173,10 +313,53 @@ const addOneBuilding = async (req, res) => {
       ura_category === "Sports and Recreation" &&
       scdf_category === "VII - Place of Public Resort"
     ) {
-      if (
+      if (floor_no >= 1 && basement_floor_no == 0 && habitable_height <= 24) {
+        const newBuilding = await building.create({
+          building_type: building_type,
+          ura_category: ura_category,
+          scdf_category: scdf_category,
+          usage: usage,
+          floor_no: floor_no,
+          basement_floor_no: basement_floor_no,
+          building_height: building_height,
+          avg_floor_height: avg_floor_height,
+          gfa: gfa,
+          site_area: site_area,
+          plot_ratio: plot_ratio,
+          site_coverage: site_coverage,
+          habitable_height: habitable_height,
+          postal_code: postal_code,
+          block_no: block_no,
+          street_name: street_name,
+          user_id: user_id,
+          model_building_id: 6,
+        });
+        const newModelBuilding = await building.findByPk(newBuilding.id, {
+          include: {
+            model: model_building,
+            include: [
+              {
+                model: gfa_code,
+              },
+              {
+                model: planning_code,
+              },
+              {
+                model: accessibility_code,
+              },
+              {
+                model: building_code,
+              },
+              {
+                model: fire_code,
+              },
+            ],
+          },
+        });
+        return res.json(newModelBuilding);
+      } else if (
         floor_no >= 1 &&
-        floor_no < 6 &&
-        basement_floor_no == 0 &&
+        basement_floor_no > 0 &&
         habitable_height <= 24
       ) {
         const newBuilding = await building.create({
@@ -197,7 +380,7 @@ const addOneBuilding = async (req, res) => {
           block_no: block_no,
           street_name: street_name,
           user_id: user_id,
-          model_building_id: 1,
+          model_building_id: 7,
         });
         const newModelBuilding = await building.findByPk(newBuilding.id, {
           include: {
