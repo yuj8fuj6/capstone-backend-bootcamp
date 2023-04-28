@@ -5,7 +5,6 @@
 <br>
  <ol> 
     <li> <a href="#about"> Description </a></li>
-    <li> <a href="#website"> Website </a></li>
     <li> <a href="#features"> Features </a></li>
     <li> <a href="#built-with"> Built With </a></li>
     <li> <a href="#rationale"> Rationale for Technologies </a></li>
@@ -24,11 +23,6 @@ Kaibo is an app that serves as an assistant to architects, helping architects to
 It will provide checklists for monitoring compliances with regulations from different technical agencies, provide an interactive 3D display for architects to intuitively understand the context of the regulation, and answer any ad-hoc questions regarding regulations that architects may have - i.e. questions that the authorities cannot give a clear answer for quickly. 
  <br/> <br/>
 A community of architects will be engendered in this platform - i.e. architects will have a platform to ask their questions, under the guidance of officers from the different technical agencies. 
-</div>
-
-<div id="website">
- <h2> Website </h2>
-www.google.com
 </div>
 
 <div id="features">
