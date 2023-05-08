@@ -2,6 +2,7 @@ const { Router } = require("express");
 const controllers = require("../controllers/checklistsController");
 const router = Router();
 
+// also no auth. Anyone can update anyone's checklists via postman.
 router.get("/allAuthorities", controllers.getAllAuthorities);
 router.post("/addBuilding", controllers.addOneBuilding);
 router.get("/allBuildings/:user_id", controllers.getAllBuildings);

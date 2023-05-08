@@ -14,6 +14,10 @@ const scdfURL =
 const bcaURL =
   "https://www1.bca.gov.sg/about-us/news-and-publications/circulars";
 
+// i think it would make more sense to not run this on an endpoint, but periodically. Maybe via a cronjob or via a timed process. 
+// E.g. every 4 hours, scrape the ura website and store the results somewhere to be displayed on the FE
+// Doing this every time you start your app is a very inefficient process. It takes very long to process and the data on the frontend would not be up to date.
+
 app.get("/circulars/ura", (req, res) => {
   axios(uraURL)
     .then((response) => {

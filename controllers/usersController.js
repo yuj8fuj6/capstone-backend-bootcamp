@@ -5,6 +5,7 @@ const e = require("express");
 // create or get one user
 
 const getOne = async (req, res) => {
+  // can consider validating the the email is in email format via Regex or a validation library
   const { email } = req.params;
 
   try {
@@ -53,6 +54,10 @@ const updateOne = async (req, res) => {
 
   try {
     const currentUser = await user.findByPk(userId);
+    // what is there is no such user because it doesn't exist or the userId was invalid?
+    // Instead of leaving error handling up to your catch block, I would manually handle the error instead.
+    // By right the catch block should be a 500, internal server error. Anything really unexpected basically.
+    // Not finding a user is rather a possibly expected behavior and I would handle it by returning 400.
     await currentUser.update({
       name: name,
       dob: dob,

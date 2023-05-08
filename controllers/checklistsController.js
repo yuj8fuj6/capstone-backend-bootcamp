@@ -38,6 +38,10 @@ const getAllAuthorities = async (req, res) => {
 // Add new building and check against model building
 
 const addOneBuilding = async (req, res) => {
+  // instead of destructuring here, I would just use the whole req.body.
+  // create({ ...req.body, model_building_id: 1 })
+  // I would only do that however after validating the request body. You can use yup for that as well btw.
+  // There are multiple validation libraries like that out there.
   const {
     building_type,
     ura_category,
@@ -58,6 +62,30 @@ const addOneBuilding = async (req, res) => {
     user_id,
   } = req.body;
   try {
+
+    // If I understand correctly, you are using these if else spaghetti to determine the model_building_id
+    // Why not have an object somewhere, that will let you do that?
+    /*
+
+      const modelBuildingIDMap = {
+        1: { "Industrial:Business 2 (Industrial):VI - Factory": true }
+      }
+
+      OR
+
+      const modelBuildingIDMap = {
+        "Industrial:Business 2 (Industrial):VI - Factory": 1
+      }
+
+      or something along these lines.
+
+      Then you can just concatenate the strings with : inbetween and make a comparison.
+
+      {..., model_building_id: modelBuildingIDMap[concatenatedString]}
+
+      This would get rid of all your if else code here
+
+    */
     if (
       building_type === "Industrial" &&
       ura_category === "Business 2 (Industrial)" &&
@@ -413,7 +441,10 @@ const addOneBuilding = async (req, res) => {
 };
 
 // Get all buildings
-
+// if u need all model building data, why not have a separate endpoint for that?
+// You can use the same query method as above via the ID map.
+// Then you can get all buildings, and their model buildings separately
+// This should solve some of your performance problems you face at this point
 const getAllBuildings = async (req, res) => {
   const { user_id } = req.params;
   try {
@@ -449,6 +480,10 @@ const getAllBuildings = async (req, res) => {
 };
 
 // Check GFA code
+// I see a lot of replication below this point.
+// Can't we summarize this into a single endpoint instead of making so many separate calls?
+// I feel this table setup is not scalable
+// It might be worth it to see if we can redesign the database here to have a single table we can query for the codes, but differ the different organizations by some identifier.
 
 const checkGfaCode = async (req, res) => {
   const { gfa_code_id, check, building_id, user_id } = req.body;

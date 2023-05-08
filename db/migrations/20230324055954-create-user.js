@@ -1,5 +1,6 @@
 "use strict";
 
+// nice migrations and seeder files!
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {

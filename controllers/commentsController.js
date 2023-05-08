@@ -36,6 +36,7 @@ const getAllPosts = async (req, res) => {
 const getAllThreads = async (req, res) => {
   const { postID } = req.params;
   try {
+    // nesting includes like so might be a bit inefficient, possibly room for improvement in our architecture here.
     const threads = await thread.findAll({
       where: { post_id: postID },
       include: [
@@ -212,6 +213,7 @@ const addOnePostVote = async (req, res) => {
         },
       ],
     });
+    // what if no currentPost has been found? This would try to update undefined. This is a unhandled bug as of now.
     await currentPost.update(
       { upvote: voteCount },
       { where: { post_id: post_id } },
