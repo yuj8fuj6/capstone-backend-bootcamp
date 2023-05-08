@@ -1,10 +1,10 @@
 const { Router } = require("express");
-const controllers = require("../controllers/mapsController");
+const mapsController = require("../controllers/mapsController");
 const router = Router();
 
 // get one planning parameter and planning type
-router.get("/planningType", controllers.getOnePlanningType);
+router.get("/planningType", mapsController.getOnePlanningType);
 
-router.get("/planningParam", controllers.getOnePlanningParam);
+router.get("/planningParam", mapsController.getOnePlanningParam);
 
 module.exports = router;
